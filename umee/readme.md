@@ -28,7 +28,7 @@ cd $HOME && rm -rf umee
 git clone https://github.com/umee-network/umee.git && cd umee
 git checkout v4.1.0
 make build
-sudo mv /build/umeed /usr/local/bin/
+sudo mv build/umeed /usr/local/bin/
 umeed version
 ```
 #### Init node and download genesis
