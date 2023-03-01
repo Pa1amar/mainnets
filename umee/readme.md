@@ -1,4 +1,4 @@
-##Snapshot
+## Snapshot
 ```bash
 sudo systemctl stop umeed
 SNAP_RPC="https://rpc.umee-1.palamar.io:443"
@@ -15,4 +15,10 @@ s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.umee/conf
 umeed tendermint unsafe-reset-all --home $HOME/.umee || umeed unsafe-reset-all
 sudo systemctl restart umeed 
 journalctl -u umeed -f --no-hostname -o cat
+```
+## Download addrbook.json:
+```bash
+sudo systemctl stop umeed
+wget -O $HOME/.umee/config/addrbook.json https://storage.palamar.io/mainnet/umee/addrbook.json
+sudo systemctl start umeed
 ```
