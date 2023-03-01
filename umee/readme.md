@@ -31,7 +31,14 @@ make build
 sudo mv /build/umeed /usr/local/bin/
 umeed version
 ```
-### Create service and start node
+#### Init node and download genesis
+```bash
+umeed init node --chain-id umee-1
+wget -O $HOME/.umee/config/genesis.json https://raw.githubusercontent.com/umee-network/umee/main/networks/umee-1/genesis.json
+umeed tendermint unsafe-reset-all --home $HOME/.umee || umeed unsafe-reset-all
+wget -O $HOME/.umee/config/addrbook.json https://storage.palamar.io/mainnet/umee/addrbook.json
+```
+#### Create service and start node
 ```bash
 echo "[Unit]
 Description=Umee Node
