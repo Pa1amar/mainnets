@@ -38,6 +38,10 @@ wget -O $HOME/.umee/config/genesis.json https://raw.githubusercontent.com/umee-n
 umeed tendermint unsafe-reset-all --home $HOME/.umee || umeed unsafe-reset-all
 wget -O $HOME/.umee/config/addrbook.json https://storage.palamar.io/mainnet/umee/addrbook.json
 ```
+#### Config node
+```bash
+sed -i 's/^minimum-gas-prices *=.*/minimum-gas-prices = "0.001uumee"/' $HOME/.umee/config/app.toml
+```
 #### Create service and start node
 ```bash
 echo "[Unit]
