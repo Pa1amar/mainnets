@@ -5,6 +5,33 @@
 | RPC  | https://rpc.umee-1.palamar.io:443 |
 | API  | https://api.umee-1.palamar.io:443 |
 | GRPC | https://grpc.umee-1.palamar.io:443 |
+## Install node
+```bash
+sudo apt update
+sudo apt install make clang pkg-config libssl-dev build-essential git -y
+```
+### install go
+```bash
+cd $HOME
+VERSION=1.19.6
+wget -O go.tar.gz https://go.dev/dl/go$VERSION.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go.tar.gz && rm go.tar.gz
+echo 'export GOROOT=/usr/local/go' >> $HOME/.bash_profile
+echo 'export GOPATH=$HOME/go' >> $HOME/.bash_profile
+echo 'export GO111MODULE=on' >> $HOME/.bash_profile
+echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> $HOME/.bash_profile && . $HOME/.bash_profile
+go version
+```
+### Build binary
+```bash
+cd $HOME
+git clone https://github.com/umee-network/umee.git && cd umee
+git checkout v4.1.0
+make build
+sudo mv /build/umeed /usr/local/bin/
+umeed version
+```
+
 ## StateSync
 ```bash
 sudo systemctl stop umeed
