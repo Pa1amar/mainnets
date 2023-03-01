@@ -24,7 +24,7 @@ go version
 ```
 #### Build binary
 ```bash
-cd $HOME
+cd $HOME && rm -rf umee
 git clone https://github.com/umee-network/umee.git && cd umee
 git checkout v4.1.0
 make build
