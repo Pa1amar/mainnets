@@ -10,7 +10,7 @@
 sudo apt update
 sudo apt install make clang pkg-config libssl-dev build-essential git -y
 ```
-#### install go
+#### Install go
 ```bash
 cd $HOME
 VERSION=1.19.6
