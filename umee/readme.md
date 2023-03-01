@@ -1,4 +1,10 @@
-## Snapshot
+| Attribute | Value |
+|----------:|-------|
+| Chain ID         | `umee-1` |
+| RPC  | https://rpc.umee-1.palamar.io:443 |
+| API  | https://api.umee-1.palamar.io:443 |
+| GRPC | https://grpc.umee-1.palamar.io:443   |
+## StateSync
 ```bash
 sudo systemctl stop umeed
 SNAP_RPC="https://rpc.umee-1.palamar.io:443"
