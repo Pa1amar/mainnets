@@ -13,7 +13,7 @@ sudo apt install make clang pkg-config libssl-dev build-essential git -y
 #### Install go
 ```bash
 cd $HOME
-VERSION=1.19.6
+VERSION=1.20.1
 wget -O go.tar.gz https://go.dev/dl/go$VERSION.linux-amd64.tar.gz
 sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go.tar.gz && rm go.tar.gz
 echo 'export GOROOT=/usr/local/go' >> $HOME/.bash_profile
