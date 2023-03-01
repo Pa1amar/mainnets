@@ -10,7 +10,7 @@
 sudo apt update
 sudo apt install make clang pkg-config libssl-dev build-essential git -y
 ```
-### install go
+#### install go
 ```bash
 cd $HOME
 VERSION=1.19.6
@@ -22,7 +22,7 @@ echo 'export GO111MODULE=on' >> $HOME/.bash_profile
 echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> $HOME/.bash_profile && . $HOME/.bash_profile
 go version
 ```
-### Build binary
+#### Build binary
 ```bash
 cd $HOME
 git clone https://github.com/umee-network/umee.git && cd umee
