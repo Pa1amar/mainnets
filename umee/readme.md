@@ -31,6 +31,32 @@ make build
 sudo mv /build/umeed /usr/local/bin/
 umeed version
 ```
+### Create service and start node
+```bash
+echo "[Unit]
+Description=Umee Node
+After=network.target
+
+[Service]
+User=$USER
+Type=simple
+ExecStart=/usr/local/bin/umeed start
+Restart=on-failure
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target" > $HOME/umeed.service
+sudo mv $HOME/umeed.service /etc/systemd/system
+sudo tee <<EOF >/dev/null /etc/systemd/journald.conf
+Storage=persistent
+EOF
+```
+```bash
+sudo systemctl restart systemd-journald
+sudo systemctl daemon-reload
+sudo systemctl enable umeed
+sudo systemctl restart umeed
+```
 
 ## StateSync
 ```bash
