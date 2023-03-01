@@ -70,9 +70,10 @@ sudo systemctl enable umeed
 ## StateSync
 ```bash
 SNAP_RPC="https://rpc.umee-1.palamar.io:443"
-
+PEER="f7db89f39938ffb7935aef4b66944724a1f7c8ed@umee-1.palamar.io:10256"
+sed -i -e "s/^persistent_peers *=.*/persistent_peers = \"$PEER\"/" ~/.umee/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 2000)); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
 
 sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
