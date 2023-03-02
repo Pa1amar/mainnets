@@ -5,6 +5,7 @@
 | RPC  | https://rpc.umee-1.palamar.io:443 |
 | API  | https://api.umee-1.palamar.io:443 |
 | GRPC | https://grpc.umee-1.palamar.io:443 |
+| EXPLORER | [https://grpc.umee-1.palamar.io:443](https://explorer.palamar.io/umee/) |
 ## Install node
 ```bash
 sudo apt update
