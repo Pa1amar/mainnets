@@ -71,7 +71,7 @@ sudo systemctl enable aurad
 ## StateSync
 ```bash
 SNAP_RPC="https://aura-rpc.palamar.io:443"
-PEER="27a9ed6dabd615c5bb7f7b10a0fd505b4670c301@aura-rpc.palamar.io:10456"
+PEER="2b837edb779038f29785b347fb78397ab7dec3bf@aura-rpc.palamar.io:10456"
 sed -i -e "s/^persistent_peers *=.*/persistent_peers = \"$PEER\"/" ~/.aura/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
