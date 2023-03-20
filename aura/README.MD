@@ -1,7 +1,7 @@
 ## Aura
 | Attribute | Value |
 |----------:|-------|
-| Chain ID         | `umee-1` |
+| Chain ID         | `xstaxy-1` |
 | RPC  | https://aura-rpc.palamar.io:443 |
 | API  | https://aura-api.palamar.io:443 |
 | GRPC | https://aura-grpc.palamar.io:443 |
