@@ -46,7 +46,7 @@ sed -i 's/^minimum-gas-prices *=.*/minimum-gas-prices = "0.001uaura"/' $HOME/.au
 #### Create service and start node
 ```bash
 echo "[Unit]
-Description=Umee Node
+Description=Aura Node
 After=network.target
 
 [Service]
@@ -89,6 +89,6 @@ journalctl -u aurad -f --no-hostname -o cat
 ### Download addrbook.json:
 ```bash
 sudo systemctl stop aurad
-wget -O $HOME/.aura/config/addrbook.json https://storage.palamar.io/mainnet/umee/addrbook.json
+wget -O $HOME/.aura/config/addrbook.json https://storage.palamar.io/mainnet/aura/addrbook.json
 sudo systemctl start aurad
 ```
