@@ -10,7 +10,7 @@
 ## Install node
 ```bash
 sudo apt update
-sudo apt install make clang pkg-config libssl-dev build-essential git -y
+sudo apt install make clang pkg-config libssl-dev build-essential git jq -y
 ```
 #### Install go
 ```bash
@@ -68,6 +68,7 @@ EOF
 sudo systemctl restart systemd-journald
 sudo systemctl daemon-reload
 sudo systemctl enable aurad
+journalctl -u aurad -f -o cat
 ```
 ## StateSync
 ```bash
