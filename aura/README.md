@@ -1,3 +1,4 @@
+![Logo](https://raw.githubusercontent.com/Pa1amar/mainnets/main/aura/Aura-logo.png)
 ## Aura
 | Attribute | Value |
 |----------:|-------|
