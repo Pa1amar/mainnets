@@ -87,7 +87,7 @@ aurad tendermint unsafe-reset-all --home $HOME/.aura || aurad unsafe-reset-all
 sudo systemctl restart aurad 
 journalctl -u aurad -f --no-hostname -o cat
 ```
-### Download addrbook.json(Updated every hour):
+### Download addrbook.json (Updated every hour):
 ```bash
 sudo systemctl stop aurad
 wget -O $HOME/.aura/config/addrbook.json https://storage.palamar.io/mainnet/aura/addrbook.json
