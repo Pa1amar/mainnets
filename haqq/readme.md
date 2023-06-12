@@ -8,6 +8,64 @@
 | GRPC | https://haqq-grpc.palamar.io:443 |
 | EXPLORER | https://explorer.palamar.io/haqq/ |
 
+## Install node
+```bash
+sudo apt update
+sudo apt install make clang pkg-config libssl-dev build-essential git jq -y
+```
+#### Install go
+```bash
+cd $HOME
+VERSION=1.20.4
+wget -O go.tar.gz https://go.dev/dl/go$VERSION.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go.tar.gz && rm go.tar.gz
+echo 'export GOROOT=/usr/local/go' >> $HOME/.bash_profile
+echo 'export GOPATH=$HOME/go' >> $HOME/.bash_profile
+echo 'export GO111MODULE=on' >> $HOME/.bash_profile
+echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> $HOME/.bash_profile && . $HOME/.bash_profile
+go version
+```
+#### Build binary
+```bash
+cd $HOME && rm -rf haqq
+git clone https://github.com/haqq-network/haqq.git && cd haqq
+git checkout v1.4.0
+make build
+sudo mv build/haqqd /usr/local/bin/
+haqqd version
+```
+#### Init node and download genesis
+```bash
+haqqd init node --chain-id haqq_11235-1
+wget -O $HOME/.haqqd/config/genesis.json https://raw.githubusercontent.com/Pa1amar/mainnets/main/haqq/genesis.json
+haqqd tendermint unsafe-reset-all --home $HOME/.haqqd || haqqd unsafe-reset-all
+wget -O $HOME/.haqqd/config/addrbook.json https://storage.palamar.io/mainnet/haqq/addrbook.json
+```
+#### Create service and start node
+```bash
+echo "[Unit]
+Description=Haqq Node
+After=network.target
+
+[Service]
+User=$USER
+Type=simple
+ExecStart=/usr/local/bin/haqqd start
+Restart=on-failure
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target" > $HOME/haqqd.service
+sudo mv $HOME/haqqd.service /etc/systemd/system
+sudo tee <<EOF >/dev/null /etc/systemd/journald.conf
+Storage=persistent
+EOF
+```
+```bash
+sudo systemctl restart systemd-journald
+sudo systemctl daemon-reload
+sudo systemctl enable haqqd
+journalctl -u haqqd -f -o cat
 ## StateSync
 ```bash
 SNAP_RPC="https://haqq-rpc.palamar.io:443"
