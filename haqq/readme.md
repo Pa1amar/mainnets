@@ -41,31 +41,6 @@ wget -O $HOME/.haqqd/config/genesis.json https://raw.githubusercontent.com/Pa1am
 haqqd tendermint unsafe-reset-all --home $HOME/.haqqd || haqqd unsafe-reset-all
 wget -O $HOME/.haqqd/config/addrbook.json https://storage.palamar.io/mainnet/haqq/addrbook.json
 ```
-#### Create service and start node
-```bash
-echo "[Unit]
-Description=Haqq Node
-After=network.target
-
-[Service]
-User=$USER
-Type=simple
-ExecStart=/usr/local/bin/haqqd start
-Restart=on-failure
-LimitNOFILE=65535
-
-[Install]
-WantedBy=multi-user.target" > $HOME/haqqd.service
-sudo mv $HOME/haqqd.service /etc/systemd/system
-sudo tee <<EOF >/dev/null /etc/systemd/journald.conf
-Storage=persistent
-EOF
-```
-```bash
-sudo systemctl restart systemd-journald
-sudo systemctl daemon-reload
-sudo systemctl enable haqqd
-journalctl -u haqqd -f -o cat
 ## StateSync
 ```bash
 SNAP_RPC="https://haqq-rpc.palamar.io:443"
