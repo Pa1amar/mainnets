@@ -39,7 +39,6 @@ haqqd version
 haqqd init node --chain-id haqq_11235-1
 wget -O $HOME/.haqqd/config/genesis.json https://raw.githubusercontent.com/Pa1amar/mainnets/main/haqq/genesis.json
 haqqd tendermint unsafe-reset-all --home $HOME/.haqqd || haqqd unsafe-reset-all
-wget -O $HOME/.haqqd/config/addrbook.json https://storage.palamar.io/mainnet/haqq/addrbook.json
 ```
 #### Create service and start node
 ```bash
