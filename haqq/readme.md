@@ -11,7 +11,7 @@
 ## StateSync
 ```bash
 SNAP_RPC="https://haqq-rpc.palamar.io:443"
-PEER="2b837edb779038f29785b347fb78397ab7dec3bf@haqq-rpc.palamar.io:10456"
+PEER="6ad32961d595c715739f146f60d95830f8261bea@haqq-rpc.palamar.io:10456"
 sed -i -e "s/^persistent_peers *=.*/persistent_peers = \"$PEER\"/" ~/.haqq/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
