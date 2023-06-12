@@ -1,4 +1,4 @@
-![Logo](https://raw.githubusercontent.com/Pa1amar/mainnets/main/haqq/haqq-logo.png)
+![Logo](https://raw.githubusercontent.com/Pa1amar/mainnets/main/haqq/haqq-logo2.png)
 ## haqq
 | Attribute | Value |
 |----------:|-------|
