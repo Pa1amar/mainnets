@@ -87,6 +87,6 @@ journalctl -u haqqd -f --no-hostname -o cat
 ### Download addrbook.json (Updated every hour):
 ```bash
 sudo systemctl stop haqqd
-wget -O $HOME/.haqqd/config/addrbook.json https://storage.palamar.io/mainnet/haqq/addrbook.json
+wget --spider -O $HOME/.haqqd/config/addrbook.json https://storage.palamar.io/mainnet/haqq/addrbook.json
 sudo systemctl start haqqd
 ```
