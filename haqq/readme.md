@@ -37,7 +37,7 @@ haqqd version
 #### Init node and download genesis
 ```bash
 haqqd init node --chain-id haqq_11235-1
-wget -O $HOME/.haqqd/config/genesis.json https://raw.githubusercontent.com/Pa1amar/mainnets/main/haqq/genesis.json
+wget --spider -O $HOME/.haqqd/config/genesis.json https://raw.githubusercontent.com/Pa1amar/mainnets/main/haqq/genesis.json
 haqqd tendermint unsafe-reset-all --home $HOME/.haqqd || haqqd unsafe-reset-all
 ```
 #### Create service and start node
