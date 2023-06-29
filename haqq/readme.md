@@ -80,7 +80,7 @@ s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.haqqd/config/config.toml
 
 haqqd tendermint unsafe-reset-all --home $HOME/.haqqd || haqqd unsafe-reset-all
-wget -O $HOME/.haqqd/config/addrbook.json https://storage.palamar.io/mainnet/haqq/addrbook.json
+wget --spider -O $HOME/.haqqd/config/addrbook.json https://storage.palamar.io/mainnet/haqq/addrbook.json
 sudo systemctl restart haqqd 
 journalctl -u haqqd -f --no-hostname -o cat
 ```
