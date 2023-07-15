@@ -37,7 +37,7 @@ haqqd version
 #### Init node and download genesis
 ```bash
 haqqd init node --chain-id haqq_11235-1
-wget --spider -O $HOME/.haqqd/config/genesis.json https://raw.githubusercontent.com/Pa1amar/mainnets/main/haqq/genesis.json
+wget -O $HOME/.haqqd/config/genesis.json https://raw.githubusercontent.com/Pa1amar/mainnets/main/haqq/genesis.json
 haqqd tendermint unsafe-reset-all --home $HOME/.haqqd || haqqd unsafe-reset-all
 ```
 #### Create service and start node
@@ -80,13 +80,13 @@ s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.haqqd/config/config.toml
 
 haqqd tendermint unsafe-reset-all --home $HOME/.haqqd || haqqd unsafe-reset-all
-wget --spider -O $HOME/.haqqd/config/addrbook.json https://storage.palamar.io/mainnet/haqq/addrbook.json
+wget -O $HOME/.haqqd/config/addrbook.json https://storage.palamar.io/mainnet/haqq/addrbook.json
 sudo systemctl restart haqqd 
 journalctl -u haqqd -f --no-hostname -o cat
 ```
 ### Download addrbook.json (Updated every hour):
 ```bash
 sudo systemctl stop haqqd
-wget --spider -O $HOME/.haqqd/config/addrbook.json https://storage.palamar.io/mainnet/haqq/addrbook.json
+wget -O $HOME/.haqqd/config/addrbook.json https://storage.palamar.io/mainnet/haqq/addrbook.json
 sudo systemctl start haqqd
 ```
