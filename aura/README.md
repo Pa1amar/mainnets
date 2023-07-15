@@ -91,6 +91,6 @@ journalctl -u aurad -f --no-hostname -o cat
 ### Download addrbook.json (Updated every hour):
 ```bash
 sudo systemctl stop aurad
-wget --spider -O $HOME/.aura/config/addrbook.json https://storage.palamar.io/mainnet/aura/addrbook.json
+wget -O $HOME/.aura/config/addrbook.json https://storage.palamar.io/mainnet/aura/addrbook.json
 sudo systemctl start aurad
 ```
