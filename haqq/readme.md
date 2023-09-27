@@ -25,13 +25,13 @@ echo 'export GO111MODULE=on' >> $HOME/.bash_profile
 echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> $HOME/.bash_profile && . $HOME/.bash_profile
 go version
 ```
-#### Build binary
+#### Download binary
 ```bash
-cd $HOME && rm -rf haqq
-git clone https://github.com/haqq-network/haqq.git && cd haqq
-git checkout v1.4.0
-make build
-sudo mv build/haqqd /usr/local/bin/
+cd $HOME 
+wget -O haqq_1.5.0_Linux_x86_64.tar.gz https://github.com/haqq-network/haqq/releases/download/v1.5.0/haqq_1.5.0_Linux_x86_64.tar.gz
+tar xvf haqq_1.5.0_Linux_x86_64.tar.gz
+sudo chmod +x ./bin/haqqd
+sudo mv ./bin/haqqd /usr/local/bin/
 haqqd version
 ```
 #### Init node and download genesis
