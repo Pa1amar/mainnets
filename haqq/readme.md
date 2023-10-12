@@ -28,8 +28,11 @@ go version
 #### Download binary
 ```bash
 cd $HOME 
-wget -O haqq_1.5.0_Linux_x86_64.tar.gz https://github.com/haqq-network/haqq/releases/download/v1.5.0/haqq_1.5.0_Linux_x86_64.tar.gz
-tar xvf haqq_1.5.0_Linux_x86_64.tar.gz
+rm -rf haqq
+git clone https://github.com/haqq-network/haqq.git
+cd haqq
+git checkout v1.6.0
+make build
 sudo chmod +x ./bin/haqqd
 sudo mv ./bin/haqqd /usr/local/bin/
 haqqd version
