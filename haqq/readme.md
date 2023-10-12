@@ -33,8 +33,7 @@ git clone https://github.com/haqq-network/haqq.git
 cd haqq
 git checkout v1.6.0
 make build
-sudo chmod +x ./bin/haqqd
-sudo mv ./bin/haqqd /usr/local/bin/
+sudo mv ./build/haqqd /usr/local/bin/
 haqqd version
 ```
 #### Init node and download genesis
