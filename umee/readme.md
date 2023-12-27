@@ -1,4 +1,3 @@
-![Logo](https://raw.githubusercontent.com/Pa1amar/mainnets/main/umee/ux.png)
 ## Umee
 | Attribute | Value |
 |----------:|-------|
