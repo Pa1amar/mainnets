@@ -28,7 +28,7 @@ go version
 ```bash
 cd $HOME && rm -rf aura
 git clone https://github.com/aura-nw/aura.git && cd aura
-git checkout aura_v0.4.4
+git checkout v0.7.2
 make build
 sudo mv build/aurad /usr/local/bin/
 aurad version
