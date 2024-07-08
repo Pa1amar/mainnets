@@ -4,7 +4,7 @@ sudo apt update && sudo apt install make curl clang pkg-config libssl-dev build-
 IP_ADDRESS=$(curl ipinfo.io/ip):26656
 PENUMBRA_BRANCH=v0.79.0
 COMEBFT_BRANCH=v0.37.2
-sudo systemctl stop penumbrad 2>/dev/null
+sudo systemctl stop penumbra 2>/dev/null
 sudo systemctl stop cometbft 2>/dev/null
 echo -e '\n\e[42mInstall Go\e[0m\n' && sleep 1
 cd $HOME
@@ -29,7 +29,6 @@ git checkout $COMEBFT_BRANCH
 make install || exit
 sleep 2
 cometbft init full
-#curl -s https://raw.githubusercontent.com/penumbra-zone/penumbra/main/testnets/tm_config_template.toml > $HOME/.penumbra/testnet_data/node0/cometbft/config/config.toml
 sleep 2
 cd $HOME
 rm -rf $HOME/penumbra
@@ -71,9 +70,9 @@ RestartSec=10
 LimitNOFILE=65536
 [Install]
 WantedBy=multi-user.target
-" > $HOME/penumbrad.service
+" > $HOME/penumbra.service
 sudo mv $HOME/cometbft.service /etc/systemd/system
-sudo mv $HOME/penumbrad.service /etc/systemd/system
+sudo mv $HOME/penumbra.service /etc/systemd/system
 sudo tee <<EOF >/dev/null /etc/systemd/journald.conf
 Storage=persistent
 EOF
@@ -81,7 +80,7 @@ sudo systemctl restart systemd-journald
 sudo systemctl daemon-reload
 echo -e '\n\e[42mEnabling cometbft and Penumbra Node services\e[0m\n' && sleep 1
 sudo systemctl enable cometbft
-sudo systemctl enable penumbrad
-#sudo systemctl restart penumbrad
+sudo systemctl enable penumbra
+#sudo systemctl restart penumbra
 sleep 15
 #sudo systemctl restart cometbft
