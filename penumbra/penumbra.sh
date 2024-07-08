@@ -43,7 +43,7 @@ mv ~/penumbra/target/release/pd /usr/local/bin/ || exit
 mv ~/penumbra/target/release/pcli /usr/local/bin/ || exit
 pd network unsafe-reset-all
 pcli view reset
-pd network join --external-address $IP_ADDRESS --moniker $MONIKER
+pd network join --external-address $IP_ADDRESS --moniker $MONIKER https://rpc.test-penumbra.theamsolutions.info
 echo -e '\n\e[42mCreating a service for Cometbft Node ...\e[0m\n' && sleep 1
 echo "[Unit]
 Description=Cometbft Node
