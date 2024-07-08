@@ -9,7 +9,7 @@ sudo systemctl stop cometbft 2>/dev/null
 echo -e '\n\e[42mInstall Go\e[0m\n' && sleep 1
 cd $HOME
 wget -O go1.18.1.linux-amd64.tar.gz https://golang.org/dl/go1.18.1.linux-amd64.tar.gz
-rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.1.linux-amd64.tar.gz && rm go1.18.1.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.1.linux-amd64.tar.gz && rm go1.18.1.linux-amd64.tar.gz
 echo 'export GOROOT=/usr/local/go' >> $HOME/.bash_profile
 echo 'export GOPATH=$HOME/go' >> $HOME/.bash_profile
 echo 'export GO111MODULE=on' >> $HOME/.bash_profile
@@ -39,8 +39,8 @@ git checkout $PENUMBRA_BRANCH
 cargo update
 export RUST_LOG="warn,pd=debug,penumbra=debug,jmt=info"
 cargo build --release
-mv ~/penumbra/target/release/pd /usr/local/bin/ || exit
-mv ~/penumbra/target/release/pcli /usr/local/bin/ || exit
+sudo mv ~/penumbra/target/release/pd /usr/local/bin/ || exit
+sudo mv ~/penumbra/target/release/pcli /usr/local/bin/ || exit
 pd network unsafe-reset-all
 pcli view reset
 pd network join --external-address $IP_ADDRESS --moniker $MONIKER https://rpc.test-penumbra.theamsolutions.info
