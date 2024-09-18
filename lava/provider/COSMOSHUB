@@ -1,0 +1,23 @@
+endpoints:
+    - api-interface: tendermintrpc
+      chain-id: COSMOSHUB
+      network-address:
+        address: 0.0.0.0:8888
+        disable-tls: true
+      node-urls:
+        - url: ws://ip:port/websocket
+        - url: http://ip:port
+    - api-interface: grpc
+      chain-id: COSMOSHUB
+      network-address:
+        address: 0.0.0.0:8888
+        disable-tls: true
+      node-urls:
+        - url: ip:port
+    - api-interface: rest
+      chain-id: COSMOSHUB
+      network-address:
+        address: 0.0.0.0:8888
+        disable-tls: true
+      node-urls:
+        - url: http://ip:port
