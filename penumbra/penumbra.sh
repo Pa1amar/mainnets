@@ -81,6 +81,6 @@ sudo systemctl daemon-reload
 echo -e '\n\e[42mEnabling cometbft and Penumbra Node services\e[0m\n' && sleep 1
 sudo systemctl enable cometbft
 sudo systemctl enable penumbra
-sudo systemctl restart penumbra
+#sudo systemctl restart penumbra
 sleep 15
-sudo systemctl restart cometbft
+#sudo systemctl restart cometbft
