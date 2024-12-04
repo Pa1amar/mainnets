@@ -1,4 +1,4 @@
-![Logo](https://raw.githubusercontent.com/Pa1amar/mainnets/refs/heads/main/namada/Namada_Logo_RGB_Yellow.png)
+![Logo](https://github.com/Pa1amar/mainnets/blob/main/namada/y4D30_VO_400x400.jpg)
 ## Namada
 | Attribute | Value |
 |----------:|-------|
