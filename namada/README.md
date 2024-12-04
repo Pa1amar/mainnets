@@ -13,6 +13,8 @@
 tcp://d86c6c8bc56781fd93794ca7af6f0c0e90e34584@namada-peer.palamar.io:16656
 ```
 
+### Live Peers
+
 ### Download addrbook.json (Updated every hour):
 ```bash
 sudo systemctl stop namadad
