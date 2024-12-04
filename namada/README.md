@@ -11,6 +11,6 @@
 ### Download addrbook.json (Updated every hour):
 ```bash
 sudo systemctl stop namadad
-wget -O $HOME//.local/share/namada/namada.5f5de2dd1b88cba30586420/cometbft/config/addrbook.json https://storage.palamar.io/mainnet/namada/addrbook.json
+wget -O $HOME/.local/share/namada/namada.5f5de2dd1b88cba30586420/cometbft/config/addrbook.json https://storage.palamar.io/mainnet/namada/addrbook.json
 sudo systemctl start namadad
 ```
