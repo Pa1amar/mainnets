@@ -1,4 +1,4 @@
-![Logo](https://raw.githubusercontent.com/Pa1amar/mainnets/main/haqq/haqq-logo2.png)
+![Logo](https://raw.githubusercontent.com/Pa1amar/mainnets/refs/heads/main/namada/Namada_Logo_RGB_Yellow.png)
 ## Namada
 | Attribute | Value |
 |----------:|-------|
