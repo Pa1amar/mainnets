@@ -8,6 +8,11 @@
 | INDEXER | https://namada-indexer.palamar.io:443 |
 | INTERFACE | https://namada-interface.palamar.io |
 
+### Peer
+```bash
+tcp://d86c6c8bc56781fd93794ca7af6f0c0e90e34584@namada-peer.palamar.io:16656
+```
+
 ### Download addrbook.json (Updated every hour):
 ```bash
 sudo systemctl stop namadad
