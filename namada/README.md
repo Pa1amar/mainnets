@@ -3,7 +3,7 @@
 | Attribute | Value |
 |----------:|-------|
 | Chain ID         | `namada.5f5de2dd1b88cba30586420` |
-| RPC  | https://namada-rpc.palamar.io:443 |
+| RPC (tx_index: on)  | https://namada-rpc.palamar.io:443 |
 | MASP  | https://namada-masp.palamar.io:443 |
 | INDEXER | https://namada-indexer.palamar.io:443 |
 | INTERFACE | https://namada-interface.palamar.io |
