@@ -14,7 +14,7 @@ sudo systemctl stop namadad
 cp $HOME/.local/share/namada/namada.5f5de2dd1b88cba30586420/cometbft/data/priv_validator_state.json $HOME/.local/share/namada/namada.5f5de2dd1b88cba30586420/priv_validator_state.json.backup
 rm -rf $HOME/.local/share/namada/namada.5f5de2dd1b88cba30586420/cometbft/data
 rm -rf $HOME/.local/share/namada/namada.5f5de2dd1b88cba30586420/db
-curl https://mainnet-snapshots.citizenweb3.com/namada/snapshot_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.local/share/namada/namada.5f5de2dd1b88cba30586420/
+curl https://storage.palamar.io/mainnet/namada/snapshot_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.local/share/namada/namada.5f5de2dd1b88cba30586420/
 mv $HOME/.local/share/namada/namada.5f5de2dd1b88cba30586420/priv_validator_state.json.backup $HOME/.local/share/namada/namada.5f5de2dd1b88cba30586420/cometbft/data/priv_validator_state.json
 sudo systemctl restart namadad
 ```
