@@ -7,6 +7,7 @@
 | MASP  | https://namada-masp.palamar.io:443 |
 | INDEXER | https://namada-indexer.palamar.io:443 |
 | INTERFACE | https://namada-interface.palamar.io |
+| DATA | https://storage.palamar.io/mainnet/namada |
 
 ### Download snapshot
 ```bash
